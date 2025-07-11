@@ -37,3 +37,8 @@ tasks.register<Copy>("prepareAar") {
 tasks.named("publish") {
     dependsOn("prepareAar")
 }
+
+// 显式指定 publishReleasePublicationToGitHubPackagesRepository 依赖 prepareAar
+tasks.named("publishReleasePublicationToGitHubPackagesRepository") {
+    dependsOn("prepareAar")
+}
