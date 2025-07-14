@@ -8,8 +8,8 @@ version = "1.0.2"
 publishing {
     publications {
         create<MavenPublication>("release") {
-            artifactId = "ZLocation"
-            artifact(layout.buildDirectory.file("outputs/aar/ZLocation.aar")) {
+            artifactId = "zlocation"
+            artifact(layout.buildDirectory.file("outputs/aar/zlocation.aar")) {
                 extension = "aar"
             }
         }
@@ -28,9 +28,9 @@ publishing {
 }
 
 tasks.register<Copy>("prepareAar") {
-    from("libs/zenithLocationSdk_V1.0.2.aar")
+    from("libs/zlocation.aar")
     into(layout.buildDirectory.dir("outputs/aar"))
-    rename { fileName -> "ZLocation.aar" }
+    rename { fileName -> "zlocation.aar" }
 }
 
 tasks.named("publish") {
