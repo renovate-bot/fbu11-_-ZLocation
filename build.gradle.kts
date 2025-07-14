@@ -2,17 +2,16 @@ plugins {
     `maven-publish`
 }
 
-group = "com.github.fbu11"
+group = "com.zenith.location"
 version = "1.0.2"
 
 publishing {
     publications {
         create<MavenPublication>("release") {
             artifactId = "ZLocation"
-            groupId = "com.github.fbu11"
-            version = "1.0.2"
-
-            artifact(layout.buildDirectory.file("outputs/aar/ZLocation.aar"))
+            artifact(layout.buildDirectory.file("outputs/aar/ZLocation.aar")) {
+                extension = "aar"
+            }
         }
     }
 
